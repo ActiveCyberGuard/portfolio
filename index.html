@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Amin | Full-Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<!-- LOADER -->
+<div class="loader" id="loader">
+    <div class="loader-box">
+        <div class="loader-logo"><span>AL</span>AM<span>IN</span></div>
+        <div class="loader-bar"><div class="loader-fill"></div></div>
+        <p class="loader-text"><i class="fa-solid fa-code"></i> Loading Portfolio…</p>
+    </div>
+</div>
+
+<!-- NOISE -->
+<div class="noise"></div>
+<!-- BLOBS -->
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+<div class="blob blob3"></div>
+<!-- PARTICLES -->
+<canvas id="canvas"></canvas>
+
+<!-- ══════════ NAV ══════════ -->
+<nav id="nav">
+    <div class="container nav-wrap">
+        <a href="#home" class="logo">
+            <span class="logo-bracket">&lt;</span><span>AL</span>AM<span>IN</span><span class="logo-bracket">/&gt;</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="#about"><i class="fa-solid fa-user"></i> About</a></li>
+            <li><a href="#experience"><i class="fa-solid fa-code"></i> Skills</a></li>
+            <li><a href="#projects"><i class="fa-solid fa-folder-open"></i> Projects</a></li>
+            <li><a href="#contact" class="nav-cta"><i class="fa-solid fa-paper-plane"></i> Hire Me</a></li>
+        </ul>
+        <button class="burger" id="burger">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<header id="home">
+    <div class="container hero-wrap">
+
+        <div class="hero-left">
+            <div class="badge-tag"><i class="fa-solid fa-circle-dot pulse-dot"></i> Available for work</div>
+            <p class="hero-sub">Hello, I'm</p>
+            <h1 class="hero-name">MD.<span>AL-AMIN</span></h1>
+            <div class="hero-role">
+                <i class="fa-solid fa-terminal role-icon"></i>
+                <span id="typewriter"></span><span class="blink">_</span>
+            </div>
+            <p class="hero-desc">Crafting high-performance web experiences — from pixel-perfect frontends to robust backends. Turning ideas into digital reality.</p>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-num" data-count="3">0</span><span class="stat-plus">+</span>
+                    <p>Years Exp.</p>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-num" data-count="20">0</span><span class="stat-plus">+</span>
+                    <p>Projects</p>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-num" data-count="15">0</span><span class="stat-plus">+</span>
+                    <p>Clients</p>
+                </div>
+            </div>
+
+            <div class="hero-btns">
+                <a href="/cv.jpg" class="btn btn-glow" download>
+                    <i class="fa-solid fa-file-arrow-down"></i> Download CV
+                </a>
+                <a href="#contact" class="btn btn-outline">
+                    <i class="fa-solid fa-comments"></i> Let's Talk
+                </a>
+            </div>
+
+            <div class="hero-socials">
+                <a href="https://github.com/ActiveCyberGuard" target="_blank" class="soc-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://web.facebook.com/NEON7e4" target="_blank" class="soc-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="soc-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="soc-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="mailto:mdalamin7e7@gmail.com" class="soc-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <div class="hero-right">
+            <div class="photo-frame">
+                <div class="photo-glow"></div>
+                <!-- 📸 PHOTO: images/img1 (1).png — profile photo, square, min 400×400px -->
+                <img src="/mypic.jpeg" alt="Al-Amin" class="photo-img">
+                <div class="orbit orbit1"><div class="orbit-dot o-react"><i class="fa-brands fa-react"></i></div></div>
+                <div class="orbit orbit2"><div class="orbit-dot o-node"><i class="fa-brands fa-node-js"></i></div></div>
+                <div class="orbit orbit3"><div class="orbit-dot o-js"><i class="fa-brands fa-js"></i></div></div>
+                <div class="float-tag ftag1"><i class="fa-brands fa-html5"></i> HTML5</div>
+                <div class="float-tag ftag2"><i class="fa-brands fa-css3-alt"></i> CSS3</div>
+            </div>
+        </div>
+
+    </div>
+    <a href="#about" class="hero-scroll"><i class="fa-solid fa-angles-down"></i><span>Scroll</span></a>
+</header>
+
+<!-- ══════════ ABOUT ══════════ -->
+<section id="about">
+    <div class="sec-tag"><i class="fa-solid fa-user-tie"></i> About</div>
+    <p class="sec-label reveal">Get To Know More</p>
+    <h2 class="sec-title reveal">About <span>Me</span></h2>
+
+    <div class="container about-wrap">
+        <div class="about-img-col reveal-left">
+            <div class="about-img-frame">
+                <!-- 📸 PHOTO: images/alimg.png — casual/working photo, portrait -->
+                <img src="/mypic.png.jpeg" alt="About Photo">
+                <div class="img-corner tl"></div>
+                <div class="img-corner br"></div>
+                <div class="exp-badge-float">
+                    <i class="fa-solid fa-award"></i>
+                    <div><strong>3+</strong><span>Years</span></div>
+                </div>
+                <div class="img-dot-grid"></div>
+            </div>
+        </div>
+
+        <div class="about-info reveal-right">
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-icon-wrap"><i class="fa-solid fa-briefcase"></i></div>
+                    <div><h4>Experience</h4><p>3+ Years Full-Stack</p></div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon-wrap"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <div><h4>Education</h4><p>Bachelor's in ICT</p></div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon-wrap"><i class="fa-solid fa-location-dot"></i></div>
+                    <div><h4>Location</h4><p>Bangladesh 🇧🇩</p></div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon-wrap"><i class="fa-solid fa-language"></i></div>
+                    <div><h4>Languages</h4><p>Bangla, English</p></div>
+                </div>
+            </div>
+
+            <p class="about-bio">
+                I'm a passionate <strong>Full-Stack Developer</strong> who loves building clean, fast, and beautiful web applications. With 3+ years of hands-on experience, I bridge the gap between design and technology — delivering products people actually love to use.
+            </p>
+
+            <div class="about-tags">
+                <span><i class="fa-solid fa-check-circle"></i> Problem Solver</span>
+                <span><i class="fa-solid fa-check-circle"></i> Clean Code</span>
+                <span><i class="fa-solid fa-check-circle"></i> Team Player</span>
+                <span><i class="fa-solid fa-check-circle"></i> Fast Learner</span>
+            </div>
+
+            <a href="/cv.jpg" class="btn btn-glow" download style="margin-top:1.5rem;display:inline-flex;">
+                <i class="fa-solid fa-file-arrow-down"></i> Download CV
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════ SKILLS ══════════ -->
+<section id="experience">
+    <div class="sec-tag"><i class="fa-solid fa-code"></i> Skills</div>
+    <p class="sec-label reveal">Explore My</p>
+    <h2 class="sec-title reveal">Tech <span>Stack</span></h2>
+
+    <div class="container skills-grid">
+        <div class="skill-box reveal-left">
+            <div class="skill-box-head"><i class="fa-solid fa-paintbrush"></i> Frontend</div>
+            <div class="pills">
+                <div class="pill"><i class="fa-brands fa-html5 html-c"></i><div><b>HTML5</b><small>Expert</small></div></div>
+                <div class="pill"><i class="fa-brands fa-css3-alt css-c"></i><div><b>CSS3</b><small>Expert</small></div></div>
+                <div class="pill"><i class="fa-brands fa-js js-c"></i><div><b>JavaScript</b><small>Intermediate</small></div></div>
+                <div class="pill"><i class="fa-brands fa-sass sass-c"></i><div><b>SASS</b><small>Intermediate</small></div></div>
+                <div class="pill"><i class="fa-brands fa-vuejs vue-c"></i><div><b>Vue.js</b><small>Intermediate</small></div></div>
+                <div class="pill"><i class="fa-brands fa-react react-c"></i><div><b>React</b><small>Intermediate</small></div></div>
+            </div>
+        </div>
+        <div class="skill-box reveal-right">
+            <div class="skill-box-head"><i class="fa-solid fa-server"></i> Backend & Tools</div>
+            <div class="pills">
+                <div class="pill"><i class="fa-brands fa-node-js node-c"></i><div><b>Node.js</b><small>Intermediate</small></div></div>
+                <div class="pill"><i class="fa-solid fa-database pg-c"></i><div><b>PostgreSQL</b><small>Basic</small></div></div>
+                <div class="pill"><i class="fa-brands fa-git-alt git-c"></i><div><b>Git</b><small>Expert</small></div></div>
+                <div class="pill"><i class="fa-brands fa-github gh-c"></i><div><b>GitHub</b><small>Expert</small></div></div>
+                <div class="pill"><i class="fa-brands fa-npm npm-c"></i><div><b>NPM</b><small>Intermediate</small></div></div>
+                <div class="pill"><i class="fa-solid fa-terminal term-c"></i><div><b>Terminal</b><small>Intermediate</small></div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container prog-section reveal">
+        <h3 class="prog-title"><i class="fa-solid fa-chart-simple"></i> Proficiency</h3>
+        <div class="prog-item" data-pct="92"><div class="prog-label"><i class="fa-brands fa-html5"></i> HTML / CSS <span>0%</span></div><div class="prog-track"><div class="prog-fill"></div></div></div>
+        <div class="prog-item" data-pct="78"><div class="prog-label"><i class="fa-brands fa-js"></i> JavaScript <span>0%</span></div><div class="prog-track"><div class="prog-fill"></div></div></div>
+        <div class="prog-item" data-pct="72"><div class="prog-label"><i class="fa-brands fa-react"></i> React / Vue <span>0%</span></div><div class="prog-track"><div class="prog-fill"></div></div></div>
+        <div class="prog-item" data-pct="65"><div class="prog-label"><i class="fa-brands fa-node-js"></i> Node.js <span>0%</span></div><div class="prog-track"><div class="prog-fill"></div></div></div>
+        <div class="prog-item" data-pct="48"><div class="prog-label"><i class="fa-solid fa-database"></i> PostgreSQL <span>0%</span></div><div class="prog-track"><div class="prog-fill"></div></div></div>
+    </div>
+</section>
+
+<!-- ══════════ PROJECTS ══════════ -->
+<section id="projects">
+    <div class="sec-tag"><i class="fa-solid fa-folder-open"></i> Work</div>
+    <p class="sec-label reveal">Browse My Recent</p>
+    <h2 class="sec-title reveal">Featured <span>Projects</span></h2>
+
+    <div class="container proj-grid">
+
+        <article class="proj-card reveal" style="--d:0s">
+            <div class="proj-img-wrap">
+                <!-- 📸 images/project1.png — 600×380px screenshot -->
+                <img src="images/project1.png" alt="Project 1">
+                <div class="proj-overlay">
+                    <p>A modern full-stack web app with React & Node.js featuring real-time updates.</p>
+                    <div class="tech-chips">
+                        <span><i class="fa-brands fa-react"></i> React</span>
+                        <span><i class="fa-brands fa-node-js"></i> Node</span>
+                        <span><i class="fa-solid fa-database"></i> SQL</span>
+                    </div>
+                </div>
+                <div class="proj-num">01</div>
+            </div>
+            <div class="proj-body">
+                <h3><i class="fa-solid fa-cube"></i> Project One</h3>
+                <p>Full-stack application with authentication, REST API, and responsive design.</p>
+                <div class="proj-links">
+                    <a href="https://github.com/ActiveCyberGuard" class="plink"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <a href="#" class="plink plink-live"><i class="fa-solid fa-up-right-from-square"></i> Live Demo</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="proj-card reveal" style="--d:.12s">
+            <div class="proj-img-wrap">
+                <!-- 📸 images/pro2.png — 600×380px screenshot -->
+                <img src="images/pro2.png" alt="Project 2">
+                <div class="proj-overlay">
+                    <p>Responsive UI component library built with SASS and Vue.js.</p>
+                    <div class="tech-chips">
+                        <span><i class="fa-brands fa-vuejs"></i> Vue</span>
+                        <span><i class="fa-brands fa-sass"></i> SASS</span>
+                        <span><i class="fa-solid fa-palette"></i> Design</span>
+                    </div>
+                </div>
+                <div class="proj-num">02</div>
+            </div>
+            <div class="proj-body">
+                <h3><i class="fa-solid fa-layer-group"></i> Project Two</h3>
+                <p>Design system with reusable components, dark mode & full documentation.</p>
+                <div class="proj-links">
+                    <a href="#" class="plink"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <a href="#" class="plink plink-live"><i class="fa-solid fa-up-right-from-square"></i> Live Demo</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="proj-card reveal" style="--d:.24s">
+            <div class="proj-img-wrap">
+                <!-- 📸 images/pro3.png — 600×380px screenshot -->
+                <img src="images/pro3.png" alt="Project 3">
+                <div class="proj-overlay">
+                    <p>Backend REST API with PostgreSQL, JWT authentication & auto docs.</p>
+                    <div class="tech-chips">
+                        <span><i class="fa-brands fa-node-js"></i> Node</span>
+                        <span><i class="fa-solid fa-database"></i> PgSQL</span>
+                        <span><i class="fa-solid fa-lock"></i> JWT</span>
+                    </div>
+                </div>
+                <div class="proj-num">03</div>
+            </div>
+            <div class="proj-body">
+                <h3><i class="fa-solid fa-server"></i> Project Three</h3>
+                <p>Scalable REST API with role-based auth, migrations, and CI pipeline.</p>
+                <div class="proj-links">
+                    <a href="#" class="plink"><i class="fa-brands fa-github"></i> GitHub</a>
+                    <a href="#" class="plink plink-live"><i class="fa-solid fa-up-right-from-square"></i> Live Demo</a>
+                </div>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<!-- ══════════ CONTACT ══════════ -->
+<section id="contact">
+    <div class="sec-tag"><i class="fa-solid fa-satellite-dish"></i> Contact</div>
+    <p class="sec-label reveal">Get In Touch</p>
+    <h2 class="sec-title reveal">Contact <span>Me</span></h2>
+
+    <div class="container contact-wrap">
+
+        <div class="contact-left reveal-left">
+            <p class="contact-intro">
+                <i class="fa-solid fa-quote-left qt"></i>
+                Have a project idea, a question, or just want to say hi? My inbox is always open. Let's build something amazing together!
+            </p>
+
+            <div class="cmethods">
+                <a href="mailto:mdalamin7e7@gmail.com" class="cmethod">
+                    <div class="cm-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="cm-text"><h5>Email</h5><p>mdalamin7e7@gmail.com</p></div>
+                    <i class="fa-solid fa-chevron-right cm-arr"></i>
+                </a>
+                <a href="#" class="cmethod">
+                    <div class="cm-icon li"><i class="fa-brands fa-linkedin-in"></i></div>
+                    <div class="cm-text"><h5>LinkedIn</h5><p>Connect with me</p></div>
+                    <i class="fa-solid fa-chevron-right cm-arr"></i>
+                </a>
+                <a href="https://github.com/ActiveCyberGuard" target="_blank" class="cmethod">
+                    <div class="cm-icon gh"><i class="fa-brands fa-github"></i></div>
+                    <div class="cm-text"><h5>GitHub</h5><p>See my repositories</p></div>
+                    <i class="fa-solid fa-chevron-right cm-arr"></i>
+                </a>
+                <a href="https://web.whatsapp.com/" class="cmethod">
+                    <div class="cm-icon wa"><i class="fa-brands fa-whatsapp"></i></div>
+                    <div class="cm-text"><h5>WhatsApp:+8801627457836</h5><p>Chat directly</p></div>
+                    <i class="fa-solid fa-chevron-right cm-arr"></i>
+                </a>
+            </div>
+        </div>
+
+        <form class="contact-form reveal-right" id="contactForm" novalidate>
+            <div class="form-row">
+                <div class="form-field">
+                    <label><i class="fa-solid fa-user"></i> Name</label>
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-field">
+                    <label><i class="fa-solid fa-envelope"></i> Email</label>
+                    <input type="email" placeholder="your@email.com" required>
+                </div>
+            </div>
+            <div class="form-field">
+                <label><i class="fa-solid fa-tag"></i> Subject</label>
+                <input type="text" placeholder="Project Discussion">
+            </div>
+            <div class="form-field">
+                <label><i class="fa-solid fa-message"></i> Message</label>
+                <textarea rows="5" placeholder="Tell me about your project…" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-glow submit-btn">
+                <i class="fa-solid fa-paper-plane"></i> Send Message
+            </button>
+            <div class="form-ok" id="formOk">
+                <i class="fa-solid fa-circle-check"></i> Sent! I'll reply within 24 hours.
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+    <div class="foot-inner container">
+        <div class="foot-top">
+            <a href="#home" class="foot-logo">
+                <span class="logo-bracket">&lt;</span><span>AL</span>AM<span>IN</span><span class="logo-bracket">/&gt;</span>
+            </a>
+            <nav class="foot-nav">
+                <a href="#home"><i class="fa-solid fa-house"></i></a>
+                <a href="#about"><i class="fa-solid fa-user"></i></a>
+                <a href="#experience"><i class="fa-solid fa-code"></i></a>
+                <a href="#projects"><i class="fa-solid fa-folder-open"></i></a>
+                <a href="#contact"><i class="fa-solid fa-paper-plane"></i></a>
+            </nav>
+            <div class="foot-socials">
+                <a href="https://github.com/AlaminCyberspecialist" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="foot-line"></div>
+        <div class="foot-bottom">
+            <p><i class="fa-regular fa-copyright"></i> 2024 <span>ALAMIN</span>. All rights reserved.</p>
+            <a href="#home" class="back-top"><i class="fa-solid fa-rocket"></i> Back to top</a>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
