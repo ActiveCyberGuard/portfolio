@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════
-   Al-Amin Portfolio — script.js  (Ultra v2)
+   Al-Amin Portfolio — script.js  (Ultra v2 + CyberSec)
 ═══════════════════════════════════════════════════════ */
 'use strict';
 
@@ -34,7 +34,7 @@ document.addEventListener('mousemove', e => {
     requestAnimationFrame(trackRing);
 })();
 
-document.querySelectorAll('a, button, .proj-card, .info-card, .cmethod, .pill').forEach(el => {
+document.querySelectorAll('a, button, .proj-card, .info-card, .cmethod, .pill, .interest-card, .vuln-tag, .tl-body').forEach(el => {
     el.addEventListener('mouseenter', () => ring.classList.add('big'));
     el.addEventListener('mouseleave', () => ring.classList.remove('big'));
 });
@@ -116,7 +116,6 @@ const navAs = document.querySelectorAll('.nav-links a');
 window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', scrollY > 50);
 
-    // active link
     let active = '';
     allSections.forEach(s => {
         if (scrollY >= s.offsetTop - 130) active = s.id;
@@ -145,12 +144,15 @@ navLinks.querySelectorAll('a').forEach(a => {
 });
 
 /* ─────────────────────────────────────────────
-   6. TYPEWRITER
+   6. TYPEWRITER — includes cyber roles
 ───────────────────────────────────────────── */
 const roles = [
     'Full-Stack Developer',
     'Frontend Engineer',
     'Vue & React Expert',
+    'Cyber Security Trainee',
+    'Ethical Hacker 🔐',
+    'Web Pen Tester',
     'UI / UX Enthusiast',
     'Problem Solver 🚀'
 ];
@@ -206,7 +208,7 @@ const heroWrap = document.querySelector('.hero-stats');
 if (heroWrap) statObs.observe(heroWrap);
 
 /* ─────────────────────────────────────────────
-   9. SKILL PROGRESS BARS
+   9. SKILL PROGRESS BARS (ALL sections)
 ───────────────────────────────────────────── */
 const progObs = new IntersectionObserver(entries => {
     entries.forEach(e => {
@@ -331,6 +333,70 @@ document.querySelectorAll('.skill-box').forEach(box => {
     pillObs.observe(box);
 });
 
-console.log('%c🚀 Al-Amin Portfolio v2 Loaded', 'color:#e93b67;font-size:14px;font-weight:900;background:#0d0e10;padding:6px 12px;border-radius:4px;');
+/* ─────────────────────────────────────────────
+   16. VULNERABILITY TAGS STAGGER ANIMATION
+───────────────────────────────────────────── */
+const vulnSection = document.querySelector('.vuln-section');
+if (vulnSection) {
+    const vulnObs = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+            document.querySelectorAll('.vuln-tag').forEach((tag, i) => {
+                tag.style.opacity = '0';
+                tag.style.transform = 'scale(.85) translateY(8px)';
+                setTimeout(() => {
+                    tag.style.transition = 'opacity .4s ease, transform .4s ease';
+                    tag.style.opacity = '1';
+                    tag.style.transform = '';
+                }, i * 60);
+            });
+            vulnObs.unobserve(vulnSection);
+        }
+    }, { threshold: .3 });
+    vulnObs.observe(vulnSection);
+}
+
+/* ─────────────────────────────────────────────
+   17. TIMELINE ITEMS STAGGER ON SCROLL
+───────────────────────────────────────────── */
+document.querySelectorAll('.tl-item').forEach((item, i) => {
+    item.style.opacity = '0';
+    item.style.transform = 'translateX(-20px)';
+
+    const tlObs = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+            setTimeout(() => {
+                item.style.transition = 'opacity .6s ease, transform .6s ease';
+                item.style.opacity = '1';
+                item.style.transform = '';
+            }, i * 150);
+            tlObs.unobserve(item);
+        }
+    }, { threshold: .2 });
+    tlObs.observe(item);
+});
+
+/* ─────────────────────────────────────────────
+   18. INTEREST CARDS STAGGER ANIMATION
+───────────────────────────────────────────── */
+const interestGrid = document.querySelector('.interest-grid');
+if (interestGrid) {
+    const intObs = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+            interestGrid.querySelectorAll('.interest-card').forEach((card, i) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'opacity .5s ease, transform .5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = '';
+                }, i * 80);
+            });
+            intObs.unobserve(interestGrid);
+        }
+    }, { threshold: .2 });
+    intObs.observe(interestGrid);
+}
+
+console.log('%c🛡️ Al-Amin | Dev + CyberSec Portfolio Loaded', 'color:#e93b67;font-size:14px;font-weight:900;background:#0d0e10;padding:6px 12px;border-radius:4px;');
 
 }); // end DOMContentLoaded
